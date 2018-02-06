@@ -11,7 +11,8 @@ import {
   Image,
   Dimensions,
   ImageBackground,
-  View
+  View,
+  ScrollView,
 } from 'react-native';
 import TaskHeader from './../components/TaskHeader';
 import Task from './../components/Task';
@@ -73,11 +74,12 @@ export default class TasksScreen extends Component<{}> {
     return (
       <View style={styles.container}>
         <TaskHeader taksToBeCompleted={ this.calcultateToBeCompletedTasks(this.state.tasks) }/>
-        <View style={styles.tasksContainer}>
+        <ScrollView style={styles.tasksContainer}>
           {this.renderTasks(this.state.tasks)}
-        </View>
+        </ScrollView>
         <TouchableHighlight
           style={ styles.addTaskButton }
+          underlayColor={Colors.primaryColorDarker}
           onPress={ this.openAddTaskModal.bind(this) }>
           <Image
             style={styles.addTaskButtonIcon}

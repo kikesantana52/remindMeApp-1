@@ -26,7 +26,9 @@ export default class HomeScreen extends Component<{}> {
         <Image
           style={styles.remindMeLogo}
           source={require('./../images/remindMe-logo.png')}/>
-        <TouchableHighlight style={styles.homeButton}
+        <TouchableHighlight
+          style={styles.homeButton}
+          underlayColor={Colors.touchableHover}
           onPress={this.goToTaskScreen.bind(this)}>
           <Text style={styles.homeButtonText}>COMENZAR</Text>
         </TouchableHighlight>

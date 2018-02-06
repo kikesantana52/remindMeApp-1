@@ -31,6 +31,7 @@ export default class HomeScreen extends Component<{}> {
     return (
         <TouchableHighlight
             style={styles.touchableArea}
+            underlayColor={Colors.touchableHover}
             onPress={ () => { this.props.toggleTask(id) } }>
           <View style={styles.container}>
             <Image
