@@ -9,7 +9,8 @@ import {
   Text,
   TouchableHighlight,
   Image,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 import Colors from './../theme/colors';
 
@@ -23,6 +24,9 @@ export default class HomeScreen extends Component<{}> {
 
     return (
       <View style={styles.container}>
+        <StatusBar
+          barStyle="light-content"
+       />
         <Image
           style={styles.remindMeLogo}
           source={require('./../images/remindMe-logo.png')}/>
