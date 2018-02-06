@@ -17,11 +17,27 @@ import Colors from './../theme/colors';
 
 const screen = Dimensions.get('window');
 
+
 export default class TaskHeader extends Component<{}> {
+
+  getDate(){
+    //TODO: Move this to a static data folder
+    const days = [ 'Lunes', 'Martes', 'Miércoles', 'Sábado', 'Domingo'];
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+    const currentTime = new Date(),
+          month = months[currentTime.getMonth()],
+          day = days[currentTime.getDay()],
+          date = currentTime.getDate(),
+          year = currentTime.getFullYear();
+
+    return `${day} ${date} de ${month} de ${year}`.toUpperCase();
+  }
 
   render() {
 
     const { taksToBeCompleted } = this.props;
+
 
     return (
       <View style={styles.container}>
@@ -32,7 +48,7 @@ export default class TaskHeader extends Component<{}> {
             style={styles.avatar}
             source={require('./../images/user-avatar.jpg')}/>
           <Text style={styles.todosText}>{taksToBeCompleted} Pendientes</Text>
-          <Text style={styles.dateText}>SÁBADO 27 DE ENERO DE 2018</Text>
+          <Text style={styles.dateText}>{this.getDate()}</Text>
         </ImageBackground>
       </View>
     );

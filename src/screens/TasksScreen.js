@@ -13,8 +13,11 @@ import {
   ImageBackground,
   View,
   ScrollView,
+  Modal,
 } from 'react-native';
+
 import TaskHeader from './../components/TaskHeader';
+import AddTaskModal from './../modals/AddTaskModal';
 import Task from './../components/Task';
 import Colors from './../theme/colors';
 
@@ -24,20 +27,23 @@ export default class TasksScreen extends Component<{}> {
 
   constructor(props){
     super(props);
+    //TODO: Retrevive from DataBase...
     this.state = {
       tasks: [
         { id: 1, title: 'Desayuno de trabajo', completed: false },
         { id: 2, title: 'Desarrollar App', completed: false },
-        { id: 3, title: 'Diseñar Mocks', completed: true },
-        { id: 4, title: 'Exportar Assets', completed: false },
-        { id: 5, title: 'Enviar correos', completed: true },
-        { id: 6, title: 'Implementar modal', completed: false },
-      ]
+        { id: 3, title: 'Diseñar Mocks', completed: false }
+      ],
+      showAddTaskModal: false
     }
   }
 
   openAddTaskModal(){
-    this.props.navigation.navigate('Tasks');
+    this.setState({showAddTaskModal: true});
+  }
+
+  closeAddTaskModal(){
+    this.setState({showAddTaskModal: false});
   }
 
   calcultateToBeCompletedTasks(tasks){
@@ -55,6 +61,12 @@ export default class TasksScreen extends Component<{}> {
     let currentTask = tasks.find( task => task.id === taskId );
     currentTask.completed = !currentTask.completed;
     this.setState( tasks );
+  }
+
+  addTask(text){
+    const newTask = { title: text, completed: false, id: this.state.tasks.length + 1 };
+    this.setState({ tasks: [newTask, ...this.state.tasks] });
+    this.closeAddTaskModal();
   }
 
   renderTasks(tasks){
@@ -85,6 +97,14 @@ export default class TasksScreen extends Component<{}> {
             style={styles.addTaskButtonIcon}
             source={require('./../images/icon-plus.png')}/>
         </TouchableHighlight>
+        <Modal
+          visible={this.state.showAddTaskModal}
+          transparent={true}
+          animationType={'slide'}>
+          <AddTaskModal
+            closeAddTaskModal={ this.closeAddTaskModal.bind(this) }
+            addTask={ this.addTask.bind(this) }/>
+        </Modal>
       </View>
     );
   }
