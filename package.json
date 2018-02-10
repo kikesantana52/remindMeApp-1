@@ -25,6 +25,11 @@
   },
   "jest": {
     "preset": "react-native",
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
     "moduleNameMapper": {
       "^image![a-zA-Z0-9$_-]+$": "GlobalImageStub",
       "^[./a-zA-Z0-9$_-]+\\.png$": "<rootDir>/jestConfig/RelativeImageStub.js"
