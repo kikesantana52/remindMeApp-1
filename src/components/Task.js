@@ -16,7 +16,7 @@ import Colors from './../theme/colors';
 
 const screen = Dimensions.get('window');
 
-export default class HomeScreen extends Component<{}> {
+export default class Task extends Component<{}> {
 
   constructor(props){
     super(props);

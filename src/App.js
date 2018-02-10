@@ -12,7 +12,7 @@ import HomeScreen from './screens/HomeScreen';
 import TasksScreen from './screens/TasksScreen';
 
 
-const App = StackNavigator(
+export default App = StackNavigator(
   {
     Home: { screen: HomeScreen },
     Tasks: { screen: TasksScreen }
@@ -21,5 +21,3 @@ const App = StackNavigator(
     headerMode: 'none'
   }
 );
-
-export default App;
