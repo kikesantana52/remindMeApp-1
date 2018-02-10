@@ -14,6 +14,7 @@ import {
   View
 } from 'react-native';
 import Colors from './../theme/colors';
+import Typografy from './../theme/typografy';
 
 const screen = Dimensions.get('window');
 
@@ -22,7 +23,7 @@ export default class TaskHeader extends Component<{}> {
 
   getDate(){
     //TODO: Move this to a static data folder
-    const days = [ 'Lunes', 'Martes', 'Miércoles', 'Sábado', 'Domingo'];
+    const days = [ 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
     const currentTime = new Date(),
@@ -78,11 +79,12 @@ const styles = StyleSheet.create({
     borderRadius: 65
   },
   todosText:{
+    ...Typografy.avenirFont,
     fontSize: 36,
-    color: Colors.white,
-    fontFamily: 'Avenir'
+    color: Colors.white
   },
   dateText:{
+    ...Typografy.avenirFont,
     fontSize: 16,
     color: Colors.gray,
     fontFamily: 'Avenir'

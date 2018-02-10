@@ -100,7 +100,8 @@ export default class TasksScreen extends Component<{}> {
         <Modal
           visible={this.state.showAddTaskModal}
           transparent={true}
-          animationType={'slide'}>
+          animationType={'slide'}
+          onRequestClose={ this.closeAddTaskModal.bind(this) }>
           <AddTaskModal
             closeAddTaskModal={ this.closeAddTaskModal.bind(this) }
             addTask={ this.addTask.bind(this) }/>

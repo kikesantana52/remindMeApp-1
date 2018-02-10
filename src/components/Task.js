@@ -13,6 +13,7 @@ import {
   View
 } from 'react-native';
 import Colors from './../theme/colors';
+import Typografy from './../theme/typografy';
 
 const screen = Dimensions.get('window');
 
@@ -64,12 +65,13 @@ touchableArea:{
     marginTop: 4
   },
   taskText: {
+    ...Typografy.avenirFont,
+    color: Colors.primaryText,
     fontSize: 21,
-    fontFamily: 'Avenir'
   },
   taskCompletedText: {
+    ...Typografy.avenirFont,
     fontSize: 21,
-    fontFamily: 'Avenir',
     color: Colors.gray
   }
 });

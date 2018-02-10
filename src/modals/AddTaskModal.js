@@ -12,6 +12,7 @@ import {
   Dimensions,
   View,
   TextInput,
+  Platform,
 } from 'react-native';
 
 import Colors from './../theme/colors';
@@ -57,12 +58,14 @@ export default class AddTaskModal extends Component<{}> {
                 onPress={ ()=> { this.addTask() } }>
                 <Text style={styles.addButtonText}>AGREGAR</Text>
               </TouchableHighlight>
-              <TouchableHighlight
-                style={styles.cancelButton}
-                underlayColor={Colors.touchableHover}
-                onPress={ ()=>{ this.props.closeAddTaskModal() } }>
-                <Text style={styles.cancelButtonText}>CANCELAR</Text>
-              </TouchableHighlight>
+              { Platform.OS === 'ios' &&
+                <TouchableHighlight
+                  style={styles.cancelButton}
+                  underlayColor={Colors.touchableHover}
+                  onPress={ ()=>{ this.props.closeAddTaskModal() } }>
+                  <Text style={styles.cancelButtonText}>CANCELAR</Text>
+                </TouchableHighlight>
+              }
           </View>
         </View>
       </View>
@@ -84,7 +87,6 @@ const styles = StyleSheet.create({
   },
   headerContainer:{
     flex: 1,
-    height: 242,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.primaryColorDarker
@@ -105,10 +107,11 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   inputText:{
+    width: 300,
     fontFamily: 'Avenir',
     fontSize: 30,
     textAlign: 'center',
-    borderBottomWidth: 2,
+    borderBottomWidth: Platform.OS === 'ios' ? 2 : 0,
     borderBottomColor: Colors.separator
   },
   addButton: {
