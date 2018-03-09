@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task Header Component -  should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "height": 399,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "height": 399,
+        "justifyContent": "center",
+        "width": 750,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "process": [Function],
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 399,
+            "width": 750,
+          },
+          undefined,
+        ]
+      }
+    />
+    <Image
+      source={
+        Object {
+          "process": [Function],
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 65,
+          "height": 130,
+          "width": 130,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgb(255,255,255)",
+          "fontFamily": "Avenir",
+          "fontSize": 36,
+        }
+      }
+    >
+      10
+       Pendientes
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgb(164, 164, 164)",
+          "fontFamily": "Avenir",
+          "fontSize": 16,
+        }
+      }
+    >
+      JUEVES 10 DE ENERO DE 2018
+    </Text>
+  </View>
+</View>
+`;

@@ -21,7 +21,7 @@ const screen = Dimensions.get('window');
 
 export default class TaskHeader extends Component<{}> {
 
-  getDate(){
+  getFormatedDate(){
     //TODO: Move this to a static data folder
     const days = [ 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
@@ -39,7 +39,6 @@ export default class TaskHeader extends Component<{}> {
 
     const { taksToBeCompleted } = this.props;
 
-
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -49,7 +48,7 @@ export default class TaskHeader extends Component<{}> {
             style={styles.avatar}
             source={require('./../images/user-avatar.jpg')}/>
           <Text style={styles.todosText}>{taksToBeCompleted} Pendientes</Text>
-          <Text style={styles.dateText}>{this.getDate()}</Text>
+          <Text style={styles.dateText}>{this.getFormatedDate()}</Text>
         </ImageBackground>
       </View>
     );

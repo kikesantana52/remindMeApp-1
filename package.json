@@ -20,6 +20,7 @@
     "babel-jest": "22.1.0",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.1.4",
+    "mockdate": "^2.0.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "16.2.0"
   },
@@ -32,7 +33,7 @@
     ],
     "moduleNameMapper": {
       "^image![a-zA-Z0-9$_-]+$": "GlobalImageStub",
-      "^[./a-zA-Z0-9$_-]+\\.png$": "<rootDir>/jestConfig/RelativeImageStub.js"
+      "^[./a-zA-Z0-9$_-]+\\.png|[./a-zA-Z0-9$_-]+\\.jpg$": "<rootDir>/jestConfig/RelativeImageStub.js"
     }
   }
 }
