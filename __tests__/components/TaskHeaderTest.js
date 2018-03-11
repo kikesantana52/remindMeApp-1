@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 
 //Mock Data
 const MockDate = require('mockdate');
-      MockDate.set('2018-02-10T12:00:00'),
+      MockDate.set('2018-01-10T12:00:00'),
       taskToBeCompleted = 10,
       TaskHeaderClass = new TaskHeader({taskToBeCompleted});
 
